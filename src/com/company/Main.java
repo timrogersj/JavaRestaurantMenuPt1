@@ -6,14 +6,14 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main (String[] args) {
         System.out.println("in main");
-        MenuItem itemOne = new MenuItem(14.99, "hamburger", "Entree");
+        MenuItem itemOne = new MenuItem("hamburger", "Juicy hamburger", 14.99, "Entree", true);
 //        System.out.println(itemOne.getDescription());
 //        System.out.println(itemOne.getPrice());
 //        System.out.println(itemOne.getCategory());
 //        System.out.println(itemOne.isNew());
-        MenuItem itemTwo = new MenuItem(5.99, "taco", "Entree");
+        MenuItem itemTwo = new MenuItem("taco", "Crunchy or soft", 5.99, "Entree", true);
 //        System.out.println(itemTwo.getDescription());
 //        System.out.println(itemTwo.getPrice());
 //        System.out.println(itemTwo.getCategory());

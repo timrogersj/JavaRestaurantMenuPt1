@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Menu {
     private Date lastUpdated;
-    private ArrayList<MenuItem> menuItems;
+    private ArrayList<MenuItem> menuItems = new ArrayList<>();
 
     // an empty constructor, it just creates an empty list for the menuItems and uses the current time for lastUpdated
     public Menu() {
@@ -27,8 +27,39 @@ public class Menu {
 
     // getter for .getMenuItems()
     public ArrayList<MenuItem> getMenuItems() {
-        return menuItems;
+        return this.menuItems;
     }
 
     // no setters --- as of now I don't think there is any reason to overwrite the properties
+    public void setMenuItems(ArrayList<MenuItem> menuItems) {this.menuItems = menuItems;}
+
+    public void setLastUpdated(Date lastUpdated) {this.lastUpdated = lastUpdated;}
+
+    public void addMenuItem(MenuItem item) {
+        //Add to the list of menu items
+        this.menuItems.add(item);
+        //Update lastUpdated property (class variable)
+        this.lastUpdated = new Date();
+    }
+
+    public void removeMenuItem(MenuItem item) {
+        //remove the item from the list
+        this.menuItems.remove(item);
+        //update the lastUpdated property (class variable)
+        this.lastUpdated = new Date();
+    }
+
+    @Override
+    public String toString() {
+        String returnString = "";
+        //for menuItem in listOfMenuItems
+        for (MenuItem item : this.menuItems) {
+            returnString += item.toString() + "\n\n";
+
+        }
+
+        //menuItem.printOutMenuItem();
+
+        return returnString;
+    }
 }
